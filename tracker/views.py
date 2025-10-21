@@ -54,7 +54,7 @@ def logout_view(request):
     return redirect('/login/')
 
 
-@login_required(login_url="login_view2")
+@login_required(login_url="login_view")
 def index(request):
     if request.method == "POST":
         description = request.POST.get('description')
@@ -94,7 +94,7 @@ def index(request):
     return render(request, 'index.html' , context)
 
 
-@login_required(login_url="login_view2")
+@login_required(login_url="login_view")
 def delete_transaction(request, id):
     tracking_history = TrackingHistory.objects.filter(id = id)
 
