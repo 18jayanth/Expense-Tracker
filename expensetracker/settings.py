@@ -26,7 +26,8 @@ SECRET_KEY = "django-insecure-21#+i&$agz3=0!ib+9g)=)uye0q6k3+4(pcm$zk#$*rfmzh$k0
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+import os
+STATIC_DIR=os.path.join(BASE_DIR,'static')
 
 # Application definition
 
@@ -55,7 +56,7 @@ ROOT_URLCONF = "expensetracker.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [STATIC_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
